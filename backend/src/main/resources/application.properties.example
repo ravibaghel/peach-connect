@@ -1,0 +1,16 @@
+# Example Spring Boot application.properties
+# Copy this file to application.properties and fill in real values
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/peachconnect
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+
+logging.level.org.springframework.web=DEBUG
+logging.level.com.peachconnect=DEBUG
+
+management.endpoints.web.exposure.include=health,info
+management.endpoint.health.show-details=always
+

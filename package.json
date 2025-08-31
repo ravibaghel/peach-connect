@@ -1,0 +1,12 @@
+{
+  "name": "peach-connect-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "backend": "cd backend && mvn spring-boot:run",
+    "frontend": "cd frontend && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
