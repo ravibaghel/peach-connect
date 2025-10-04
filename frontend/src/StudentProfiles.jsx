@@ -36,7 +36,7 @@ export default function StudentProfiles({ jwt, students, role }) {
       setSelected(null);
       setForm({ firstName: '', lastName: '', grade: '', parentName: '', email: '', phone: '' });
     } catch (err) {
-      setError('Error saving student');
+      setError(err.message || 'Error saving student');
     }
   };
 

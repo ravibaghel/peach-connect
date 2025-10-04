@@ -25,7 +25,8 @@ This project is licensed under the MIT License. **Attribution is required:** You
 - **Frontend:**
   - If you need environment variables (e.g., API URLs), copy `frontend/.env.example` to `frontend/.env` and fill in your real values.
 
-### Start Backend and Frontend (in separate terminals)
+### Start Backend and Frontend
+You can start each service from the root using npm scripts:
 - **Backend:**
   ```sh
   npm run backend
@@ -33,6 +34,16 @@ This project is licensed under the MIT License. **Attribution is required:** You
 - **Frontend:**
   ```sh
   npm run frontend
+  ```
+
+Or run them directly in their respective folders:
+- **Backend:**
+  ```sh
+  cd backend && mvn spring-boot:run
+  ```
+- **Frontend:**
+  ```sh
+  cd frontend && npm run dev
   ```
 
 Visit [http://localhost:8080/actuator/health](http://localhost:8080/actuator/health) for backend health check.

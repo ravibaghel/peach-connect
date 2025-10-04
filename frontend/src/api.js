@@ -47,7 +47,22 @@ export async function createStudent(data, jwt) {
     headers: getAuthHeaders(jwt, { 'Content-Type': 'application/json' }),
     body: JSON.stringify(data)
   });
-  if (!response.ok) throw new Error('Failed to create student');
+  if (!response.ok) {
+    let errorMsg = 'Failed to create student';
+    try {
+      // Try to parse as JSON
+      const errorData = await response.clone().json();
+      errorMsg = errorData.message || errorMsg;
+    } catch (e) {
+      // If not JSON, fallback to text
+      try {
+        errorMsg = await response.text();
+      } catch (e2) {
+        // If even text fails, keep default
+      }
+    }
+    throw new Error(errorMsg);
+  }
   return await response.json();
 }
 
