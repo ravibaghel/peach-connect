@@ -1,4 +1,4 @@
-# Peach Connect Monorepo
+# Peach Connect
 
 School-Parent Communication Platform
 
